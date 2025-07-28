@@ -27,6 +27,13 @@ import static org.openqa.selenium.By.xpath;
 
 public class ReusableMethods {
 
+    /**
+     * Appium yeni versiyonda calisirken onceki bazi reusable methodlarda duzenlemeler yaptik.
+     * findByElement yerine findElement() kullandik.
+     * androidUIAutomator kullandik.
+     * Ekran kaydirma methodunu artik kullanamiyorum. TouchAction  olmadigi icin
+     * Onun yerine dikeyKaydirma methodunu yazdik asagida...*/
+
     public static void koordinatTiklamaMethodu(int xkoordinati, int ykoordinati, int beklemesuresi) throws InterruptedException {
 
         TouchAction action=new TouchAction<>(Driver.getAndroidDriver());
@@ -93,15 +100,15 @@ public class ReusableMethods {
     }
 
 
-    public static void ekranKaydirmaMethodu(int xbaslangic, int ybaslangic, int beklemesuresi, int xbitis, int ybitis) throws InterruptedException {
-
-        TouchAction action=new TouchAction<>(Driver.getAndroidDriver());
-        action.press(PointOption.point(xbaslangic,ybaslangic))
-                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(beklemesuresi)))
-                .moveTo(PointOption.point(xbitis,ybitis))
-                .release()
-                .perform();
-    }
+//    public static void ekranKaydirmaMethodu(int xbaslangic, int ybaslangic, int beklemesuresi, int xbitis, int ybitis) throws InterruptedException {
+//
+//        TouchAction action=new TouchAction<>(Driver.getAndroidDriver());
+//        action.press(PointOption.point(xbaslangic,ybaslangic))
+//                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(beklemesuresi)))
+//                .moveTo(PointOption.point(xbitis,ybitis))
+//                .release()
+//                .perform();
+//    }
 
     public static void dikeyKaydirma(RemoteWebDriver driver, double baslangicYuzdesi, double bitisYuzdesi, double sabitYuzde, int sure) {
         // 1. WebDriver'ın pencere boyutunu alır

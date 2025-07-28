@@ -10,6 +10,14 @@ import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
+    /**
+     * Yeni versiyonda pom.xml kismindaki dependencies son surumde yuklendiginden Driver Class'da
+     * onceki versiyondan farkli duzenlemeler yaptik.
+     * AndroidDriver ve IOSDriver icindeki AndroidElement ifadelerini sildik
+     * Ozellikle Desired Capabilities kullanmayi tamamen biraktik.
+     * Onun yerine; UiAutomator2Options 'dan bir obje olusturduk.
+     * Telefon bilgilerini onun bize sundugu hazir methodlardan yararlanarak sisteme girdik.*/
+
     private static AndroidDriver appiumDriver;
     private static IOSDriver iosDriver;
 
